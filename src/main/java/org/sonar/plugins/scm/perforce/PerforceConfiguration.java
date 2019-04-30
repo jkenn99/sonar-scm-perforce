@@ -186,6 +186,6 @@ public class PerforceConfiguration  {
 
   @CheckForNull
   public String swarm() {
-    return settings.getString(SWARM_PROP_KEY);
+    return settings.get(SWARM_PROP_KEY).orElse(null);
   }
 }
