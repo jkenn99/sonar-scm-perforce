@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.sonarsource.scm.perforce</groupId>
   <artifactId>sonar-scm-perforce-plugin</artifactId>
-  <version>1.5-SNAPSHOT</version>
-  
-  <!-- this is important for sonar-packaging-maven-plugin -->
   <packaging>sonar-plugin</packaging>
+  <version>1.5-SNAPSHOT</version>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.apiVersion>6.7.7</sonar.apiVersion>
     <jdk.min.version>1.8</jdk.min.version>
-    <sonar.sources>src/main/java,src/main/js</sonar.sources>
-</properties> 
- <licenses>
+    <sonar.sources>src/main/java</sonar.sources>
+  </properties>
+  <licenses>
     <license>
       <name>GNU LGPL 3</name>
       <url>http://www.gnu.org/licenses/lgpl.txt</url>
@@ -21,29 +22,6 @@
     </license>
   </licenses>
 
-  <developers>
-    <developer>
-      <id>henryju</id>
-      <name>Julien Henry</name>
-      <timezone>+1</timezone>
-    </developer>
-  </developers>
-  <scm>
-    <connection>scm:git:git@github.com:SonarQubeCommunity/sonar-scm-perforce.git</connection>
-    <developerConnection>scm:git:git@github.com:SonarQubeCommunity/sonar-scm-perforce.git</developerConnection>
-    <url>https://github.com/SonarQubeCommunity/sonar-scm-perforce</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/SonarQubeCommunity/sonar-scm-perforce/issues</url>
-  </issueManagement>
-  
-  <ciManagement>
-    <system>Travis</system>
-    <url>https://travis-ci.org/SonarQubeCommunity/sonar-scm-perforce</url>
-  </ciManagement>
-  
   <dependencies>
     <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
@@ -62,7 +40,7 @@
       <version>2.0.3</version>
       <scope>provided</scope>
     </dependency>
-    
+
     <!-- unit tests -->
     <dependency>
       <groupId>junit</groupId>
@@ -99,9 +77,9 @@
     	<artifactId>guava</artifactId>
     	<version>27.1-jre</version>
     </dependency>
-	
+
   </dependencies>
- 
+
   <build>
     <plugins>
       <plugin>
@@ -113,7 +91,7 @@
           <!-- the entry-point class that extends org.sonar.api.SonarPlugin -->
           <pluginClass>org.sonar.plugins.scm.perforce.PerforcePlugin</pluginClass>
           <pluginDescription>PerforcePlugin</pluginDescription>
-           
+
         </configuration>
       </plugin>
       <plugin>
